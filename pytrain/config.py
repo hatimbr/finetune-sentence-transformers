@@ -236,6 +236,10 @@ class GlobalConfig(Config):
     track: bool = field(default=False, metadata={"converter": bool, "export": False})
     dev_test: bool = field(default=False, metadata={"converter": bool, "export": False})
 
+    scale_fac_type: str = field(
+        default="linear", metadata={"converter": str, "export": True}
+    )
+
     optimizer_config: OptimizerConfig = field(
         default_factory=lambda: OptimizerConfig(sub_config=True),
         metadata={"export": True}
